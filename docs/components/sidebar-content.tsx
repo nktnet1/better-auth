@@ -444,7 +444,6 @@ export const contents: Content[] = [
 					</svg>
 				),
 			},
-
 			{
 				title: "Discord",
 				href: "/docs/authentication/discord",
@@ -1333,7 +1332,6 @@ C0.7,239.6,62.1,0.5,62.2,0.4c0,0,54,13.8,119.9,30.8S302.1,62,302.2,62c0.2,0,0.2,
 			{
 				title: "Captcha",
 				href: "/docs/plugins/captcha",
-				isNew: true,
 				icon: () => (
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -1347,6 +1345,12 @@ C0.7,239.6,62.1,0.5,62.2,0.4c0,0,54,13.8,119.9,30.8S302.1,62,302.2,62c0.2,0,0.2,
 						/>
 					</svg>
 				),
+			},
+			{
+				title: "Have I Been Pwned",
+				href: "/docs/plugins/have-i-been-pwned",
+				isNew: true,
+				icon: () => <p className="text-xs">';--</p>,
 			},
 			{
 				title: "Multi Session",
@@ -1383,6 +1387,26 @@ C0.7,239.6,62.1,0.5,62.2,0.4c0,0,54,13.8,119.9,30.8S302.1,62,302.2,62c0.2,0,0.2,
 						<path
 							fill="currentColor"
 							d="m26 2l-1.41 1.41L27.17 6h-4.855A6.984 6.984 0 0 0 9.08 10H4.83l2.58-2.59L6 6l-5 5l5 5l1.41-1.41L4.83 12h4.855A6.984 6.984 0 0 0 22.92 8h4.25l-2.58 2.59L26 12l5-5Zm-5 7a4.983 4.983 0 0 1-8.974 3H16v-2h-4.899a4.985 4.985 0 0 1 8.874-4H16v2h4.899A5 5 0 0 1 21 9"
+						></path>
+					</svg>
+				),
+			},
+			{
+				title: "One-Time Token",
+				href: "/docs/plugins/one-time-token",
+				icon: () => (
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="1em"
+						height="1em"
+						viewBox="0 0 14 14"
+					>
+						<path
+							fill="none"
+							stroke="currentColor"
+							strokeLinecap="round"
+							strokeLinejoin="round"
+							d="M.5 7A6.5 6.5 0 1 0 7 .5V7Zm2.96-3.54L2.4 2.4"
 						></path>
 					</svg>
 				),
@@ -1610,6 +1634,11 @@ C0.7,239.6,62.1,0.5,62.2,0.4c0,0,54,13.8,119.9,30.8S302.1,62,302.2,62c0.2,0,0.2,
 						<path d="m15 5 4 4" />
 					</svg>
 				),
+			},
+			{
+				title: "Create a Database Adapter",
+				href: "/docs/guides/create-a-db-adapter",
+				icon: () => <Database className="w-4 h-4 text-current" />,
 			},
 			{
 				title: "Browser Extension Guide",
