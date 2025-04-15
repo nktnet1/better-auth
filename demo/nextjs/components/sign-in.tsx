@@ -174,6 +174,19 @@ export default function SignIn() {
 							</svg>
 							Sign in with Microsoft
 						</Button>
+						<Button
+							variant="outline"
+							className={cn("w-full gap-2")}
+							onClick={async () => {
+								const res = await signIn.social({
+									provider: "salesforce",
+									callbackURL: "/dashboard",
+								});
+								console.log(res);
+							}}
+						>
+							Sign in with Salesforce
+						</Button>
 					</div>
 				</div>
 			</CardContent>

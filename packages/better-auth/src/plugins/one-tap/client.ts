@@ -115,7 +115,7 @@ export const oneTapClient = (options: GoogleOneTapOptions) => {
 						const baseDelay = options.promptOptions?.baseDelay ?? 1000;
 						const maxAttempts = options.promptOptions?.maxAttempts ?? 5;
 
-						window.google?.accounts.id.initialize({
+/* 						window.google?.accounts.id.initialize({
 							client_id: options.clientId,
 							callback: async (response: { credential: string }) => {
 								isResolved = true;
@@ -144,39 +144,39 @@ export const oneTapClient = (options: GoogleOneTapOptions) => {
 							context: contextValue,
 
 							...options.additionalOptions,
-						});
+						}); */
 
-						const handlePrompt = (attempt: number) => {
-							if (isResolved) return;
+						// const handlePrompt = (attempt: number) => {
+						// 	if (isResolved) return;
 
-							window.google?.accounts.id.prompt((notification: any) => {
-								if (isResolved) return;
+						// 	window.google?.accounts.id.prompt((notification: any) => {
+						// 		if (isResolved) return;
 
-								if (
-									notification.isDismissedMoment &&
-									notification.isDismissedMoment()
-								) {
-									if (attempt < maxAttempts) {
-										const delay = Math.pow(2, attempt) * baseDelay;
-										setTimeout(() => handlePrompt(attempt + 1), delay);
-									} else {
-										opts?.onPromptNotification?.(notification);
-									}
-								} else if (
-									notification.isSkippedMoment &&
-									notification.isSkippedMoment()
-								) {
-									if (attempt < maxAttempts) {
-										const delay = Math.pow(2, attempt) * baseDelay;
-										setTimeout(() => handlePrompt(attempt + 1), delay);
-									} else {
-										opts?.onPromptNotification?.(notification);
-									}
-								}
-							});
-						};
+						// 		if (
+						// 			notification.isDismissedMoment &&
+						// 			notification.isDismissedMoment()
+						// 		) {
+						// 			if (attempt < maxAttempts) {
+						// 				const delay = Math.pow(2, attempt) * baseDelay;
+						// 				setTimeout(() => handlePrompt(attempt + 1), delay);
+						// 			} else {
+						// 				opts?.onPromptNotification?.(notification);
+						// 			}
+						// 		} else if (
+						// 			notification.isSkippedMoment &&
+						// 			notification.isSkippedMoment()
+						// 		) {
+						// 			if (attempt < maxAttempts) {
+						// 				const delay = Math.pow(2, attempt) * baseDelay;
+						// 				setTimeout(() => handlePrompt(attempt + 1), delay);
+						// 			} else {
+						// 				opts?.onPromptNotification?.(notification);
+						// 			}
+						// 		}
+						// 	});
+						// };
 
-						handlePrompt(0);
+						// handlePrompt(0);
 					});
 				} catch (error) {
 					console.error("Error during Google One Tap flow:", error);

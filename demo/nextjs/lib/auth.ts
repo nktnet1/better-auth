@@ -19,7 +19,6 @@ import { MysqlDialect } from "kysely";
 import { createPool } from "mysql2/promise";
 import { nextCookies } from "better-auth/next-js";
 import { passkey } from "better-auth/plugins/passkey";
-import { expo } from "@better-auth/expo";
 import { stripe } from "@better-auth/stripe";
 import { Stripe } from "stripe";
 
@@ -95,10 +94,10 @@ export const auth = betterAuth({
 			clientId: process.env.GITHUB_CLIENT_ID || "",
 			clientSecret: process.env.GITHUB_CLIENT_SECRET || "",
 		},
-		google: {
-			clientId: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || "",
-			clientSecret: process.env.GOOGLE_CLIENT_SECRET || "",
-		},
+		// google: {
+		// 	clientId: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || "",
+		// 	clientSecret: process.env.GOOGLE_CLIENT_SECRET || "",
+		// },
 		discord: {
 			clientId: process.env.DISCORD_CLIENT_ID || "",
 			clientSecret: process.env.DISCORD_CLIENT_SECRET || "",
@@ -115,6 +114,11 @@ export const auth = betterAuth({
 			clientId: process.env.TWITTER_CLIENT_ID || "",
 			clientSecret: process.env.TWITTER_CLIENT_SECRET || "",
 		},
+		salesforce: {
+			clientId: process.env.SALESFORCE_CLIENT_ID || "",
+			clientSecret: process.env.SALESFORCE_CLIENT_SECRET || "",
+			instanceUrl: 'https://example--tamsandbox.sandbox.my.salesforce.com',
+		}
 	},
 	plugins: [
 		organization({
@@ -198,7 +202,6 @@ export const auth = betterAuth({
 				],
 			},
 		}),
-		expo(),
 	],
 	trustedOrigins: ["exp://"],
 });
